@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="24dp"
+    tools:context=".ui.fragments.WithdrawFragment">
+
+    <!-- Top Bar -->
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/abc_ic_ab_back_material"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_primary" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Withdraw"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+    <!-- Amount Display -->
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="$0"
+        android:textColor="@color/text_primary"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_available_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Available: $5,000.00"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_amount" />
+
+    <!-- Keypad -->
+    <GridLayout
+        android:id="@+id/layout_keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_withdraw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_amount">
+
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="1" android:tag="1" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="2" android:tag="2" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="3" android:tag="3" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="4" android:tag="4" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="5" android:tag="5" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="6" android:tag="6" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="7" android:tag="7" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="8" android:tag="8" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="9" android:tag="9" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton"     android:text=""  android:enabled="false" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:text="0" android:tag="0" android:layout_margin="8dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton"     android:text="⌫" android:id="@+id/btn_backspace" android:layout_margin="8dp" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/btn_withdraw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_confirm_withdraw"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Banking App</string>
+    
+    <!-- Home Fragment -->
+    <string name="title_home">Home</string>
+    <string name="label_total_balance">Total Balance</string>
+    <string name="text_account_number_placeholder">**** **** **** 1234</string>
+    <string name="btn_transfer">Transfer</string>
+    <string name="btn_withdraw">Withdraw</string>
+    <string name="btn_analytics">Analytics</string>
+    <string name="btn_profile">Profile</string>
+    <string name="title_recent_transactions">Recent Transactions</string>
+
+    <!-- Transfer Fragment -->
+    <string name="title_transfer">Transfer Money</string>
+    <string name="hint_recipient_name">Recipient Name</string>
+    <string name="hint_amount">Amount</string>
+    <string name="btn_send_money">Send Money</string>
+    <string name="error_recipient_required">Recipient required</string>
+    <string name="error_invalid_amount">Invalid amount</string>
+    <string name="error_insufficient_funds">Insufficient funds!</string>
+    <string name="msg_transfer_successful">Transfer Successful!</string>
+
+    <!-- Withdraw Fragment -->
+    <string name="title_withdraw_enter_amount">Enter Amount</string>
+    <string name="btn_confirm_withdraw">Withdraw</string>
+    <string name="msg_withdrawal_successful">Withdrawal Successful!</string>
+    <string name="msg_enter_valid_amount">Enter a valid amount</string>
+
+    <!-- Analytics Fragment -->
+    <string name="title_financial_analytics">Financial Analytics</string>
+    <string name="label_income">Income</string>
+    <string name="label_expense">Expense</string>
+    <string name="label_financials">Financials</string>
+    <string name="label_overview">Overview</string>
+
+    <!-- Profile Fragment -->
+    <string name="title_profile">Profile</string>
+    <string name="label_user_name">User Name</string>
+    <string name="label_account_placeholder">Account: 1234...</string>
+    <string name="hint_edit_name">Edit Name</string>
+    <string name="btn_save_changes">Save Changes</string>
+    <string name="label_dark_mode">Dark Mode</string>
+    <string name="msg_profile_updated">Profile Updated</string>
+    
+    <!-- Common -->
+    <string name="currency_symbol">$</string>
+    <string name="error_user_not_loaded">User data not loaded</string>
+
+</resources>

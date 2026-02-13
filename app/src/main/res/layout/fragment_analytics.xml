@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="24dp"
+    tools:context=".ui.fragments.AnalyticsFragment">
+
+    <!-- Top Bar -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financial Analytics"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_filter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:tint="@color/text_primary"
+        android:rotation="90"/>
+
+    <!-- Month Selector (Mock) -->
+    <LinearLayout
+        android:id="@+id/layout_month_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/abc_ic_ab_back_material"
+            app:tint="@color/text_secondary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="February 2026"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="16dp"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/abc_ic_ab_back_material"
+            android:rotation="180"
+            app:tint="@color/text_secondary"/>
+    </LinearLayout>
+
+    <!-- Chart Section (Simulated Donut) -->
+    <RelativeLayout
+        android:id="@+id/layout_chart"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_month_selector">
+
+        <ProgressBar
+            android:id="@+id/progress_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="75"
+            android:progressDrawable="@drawable/bg_card_balance"
+            style="?android:attr/progressBarStyleHorizontal"/>
+            
+        <!-- Note: Real circular progress requires a custom drawable.
+             For now, we use a placeholder or shape. -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_profile_placeholder"
+            android:backgroundTint="@color/teal_200"
+            android:alpha="0.2"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Spent"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"/>
+            <TextView
+                android:id="@+id/tv_total_spent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1,250"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Stats List -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/layout_chart">
+
+        <!-- Stat Item 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_marginEnd="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Transfers"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"/>
+            <TextView
+                android:id="@+id/tv_stat_transfer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$850.00"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+        </LinearLayout>
+
+        <!-- Stat Item 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@android:color/holo_red_dark"
+                android:layout_marginEnd="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Withdrawals"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"/>
+            <TextView
+                android:id="@+id/tv_stat_withdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$400.00"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
