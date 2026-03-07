@@ -1,15 +1,13 @@
 package com.example.bankingapp.data.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.google.firebase.firestore.DocumentId
 import java.io.Serializable
 
-@Entity(tableName = "user_table")
 data class User(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val name: String,
-    val balance: Double,
-    val accountNumber: String,
-    val profileImageUri: String? = null // For Profile picture path
+    @DocumentId
+    var id: String = "",
+    var name: String = "",
+    var balance: Double = 0.0,
+    var accountNumber: String = "",
+    var profileImageUri: String? = null
 ) : Serializable

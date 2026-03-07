@@ -1,15 +1,13 @@
 package com.example.bankingapp.data.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.google.firebase.firestore.DocumentId
 import java.io.Serializable
 
-@Entity(tableName = "transaction_table")
 data class Transaction(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val type: String, // "Deposit", "Withdraw", "Transfer"
-    val amount: Double,
-    val timestamp: Long,
-    val recipientInfo: String? = null // Nullable for Deposit/Withdraw
+    @DocumentId
+    var id: String = "",
+    var type: String = "", // "Deposit", "Withdraw", "Transfer"
+    var amount: Double = 0.0,
+    var timestamp: Long = 0L,
+    var recipientInfo: String? = null
 ) : Serializable
